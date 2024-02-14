@@ -9,6 +9,8 @@
  * 7. Print inverted number pyramid
  * 8. Print Floyd's triangle
  * 9. Print 1 0 Floyd's triangle
+ * and many more patterns
+ * 
  * 
  * I also learned about the following concepts:
  * 1. Nested for loop
@@ -194,5 +196,183 @@ public class Lec4 {
             System.out.println();
         }
 
+        System.out.println();
+
+        //Homework Problem 1
+        row = 4;
+
+        //upper half
+        for(int i = 1; i <= row; i++){
+            //left half
+            for(int j = 1; j <= i; j++){
+                System.out.print("* ");
+            }
+            //spaces
+            for(int j = 1; j <= 2 * (row - i); j++){
+                System.out.print("  ");
+            }
+            //right half
+            for(int j = 1; j <= i; j++){
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        //lower half
+        for(int i = 1; i <= row; i++){
+            //left half
+            for(int j = 1; j <= row - i + 1; j++){
+                System.out.print("* ");
+            }
+            //spaces
+            for(int j = 1; j <= 2 * (i - 1); j++){
+                System.out.print("  ");
+            }
+            //right half
+            for(int j = 1; j <= row - i + 1; j++){
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+        System.out.println();
+
+        //Homework Problem 2
+        //Print a Parallellogram
+        row = 5;
+
+        for(int i = 1; i <= row; i++){
+            //spaces
+            for(int j = 1; j <= row - i; j++){
+                System.out.print("  ");
+            }
+            //stars
+            for(int j = 1; j <= row; j++){
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+        System.out.println();
+
+        //Homework Problem 3
+        //row number pattern
+        row = 5;
+
+        for(int i = 1; i <= row; i++){
+            //spaces
+            for(int j = 1; j <= row - i; j++){
+                System.out.print("  ");
+            }
+            for(int j = 1; j <= i; j++){
+                System.out.print(" " + i + "  ");
+            }
+            System.out.println();
+        }
+
+        System.out.println();
+
+        //Homework Problem 4
+        //Palindrome number pattern
+        row = 5;
+
+        for(int i = 1; i <= row; i++){
+            //spaces
+            for(int j = 1; j <= row - i; j++){
+                System.out.print("  ");
+            }
+            //numbers
+            for(int j = i; j >= 1; j--){
+                System.out.print(j + " ");
+            }
+            //right half
+            for(int j = 2; j <= i; j++){
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.println();
+
+        //Homework Problem 5
+        //Diamond pattern
+        row = 5;
+
+        //Upper Half
+        for(int i = 1; i <= row; i++){
+            //spaces
+            for(int j = 1; j <= row - i; j++){
+                System.out.print("  ");
+            }
+            //stars
+            for(int j = 1; j <= (2*i) - 1; j++){
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        //Lower Half
+        for(int i = 1; i <= row; i++){
+            //spaces
+            for(int j = 1; j < i; j++){
+                System.out.print("  ");
+            }
+            //stars
+            for(int j = 1; j <= (2*(row - i + 1) - 1); j++){
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+        //Homework Problem 6
+        //Print a butterfly pattern
+        row = 5;
+
+        for(int i = 1; i <= 2*row; i ++){
+            for(int j = 1; j <= 2*row; j++){
+                if(j == 1 || i == j || i + j == 2*row + 1 || j == 2*row){
+                    System.out.print("* ");
+                } else {
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+        }
+
+        //Homework Problem 7
+        //Print a hollow rhombus
+        row = 5;
+
+        for(int i = 1; i <= row; i++){
+            //spaces
+            for(int j = 1; j <= row - i; j++){
+                System.out.print("  ");
+            }
+            //stars
+            for(int j = 1; j <= row; j++){
+                if(i == 1 || i == row || j == 1 || j == row){
+                    System.out.print("* ");
+                } else {
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+        }
+
+        System.out.println();
+
+        //Homework Problem 8
+        //Pascal's Triangle
+        row = 5;
+
+        for(int i = 1; i <= row; i++){
+            for(int j = 1; j <= row - i; j++){
+                System.out.print("  ");
+            }
+            int c = 1;
+            for(int j = 1; j <= i; j++){
+                System.out.print(c + "   ");
+                c = c * (i - j) / j;
+            }
+            System.out.println();
+        }
     }
 }
