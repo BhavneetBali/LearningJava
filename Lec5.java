@@ -32,16 +32,23 @@ public class Lec5 {
 
     //Function to check Prime Numbers
     public static void checkPrime(int n){
+        boolean flag = false;
         if(n < 2){
             System.out.println(n + " is not a prime number");
             return;
         }
         for(int i = 2; i <= Math.sqrt(n); i++){
             if(n % i == 0){
-                System.out.println(n + " is not a prime number");
+                break;
             } else {
-                System.out.println(n + " is a prime number");
+                flag = true;
             }
+        }
+
+        if(flag == false){
+            System.out.println(n + " is not a prime number");
+        } else {
+            System.out.println(n + " is a prime number");
         }
     }
 
